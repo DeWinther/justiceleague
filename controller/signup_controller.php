@@ -12,7 +12,10 @@ if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["passwor
     $userpassword = mysqli_real_escape_string($conn, $_POST["password"]);
     //hashing password
     $hashedpassword = password_hash($userpassword, PASSWORD_DEFAULT);
+
     // use ctpye alpha?
+    // add CSRF token.
+
 
     //Checks if username is taken
     $sql = "SELECT * FROM `user` WHERE `username` = '$username'";
@@ -50,7 +53,7 @@ if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["passwor
 }
 else
 {
-    echo "no data supplied <br>";
+    //echo "no data supplied <br>";
     header("location: ../view/signup.php?error");
 }
 ?>

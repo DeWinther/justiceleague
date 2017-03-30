@@ -10,6 +10,8 @@ if (isset($_POST["category"]) && isset($_POST["question"]) && $_POST["category"]
     $category = mysqli_real_escape_string($conn, $_POST["category"]);
     $question = mysqli_real_escape_string($conn, $_POST["question"]);
     $user_id = $_SESSION['user_id'];
+    // should check CSRF token!
+    // and prepared statement
 
     $sql = "INSERT INTO `question` (author_id, category, question) VALUES ('$user_id', '$category', '$question')";
     if ($conn->query($sql) === TRUE)
