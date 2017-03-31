@@ -3,7 +3,7 @@
         <a class="navbar-brand brand" href="#">Justice League</a>
         <li><a href="../users/all_users.php">Users</a></li>
         <li><a href="../questions/index.php">Questions</a></li>
-        <li><a href="#">Categories</a></li>
+        <li><a href="../categories/index.php">Categories</a></li>
     </ul>
 
 
