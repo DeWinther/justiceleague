@@ -74,7 +74,7 @@ class question
     }
     public function getQuestions(){
 
-        $sql = "SELECT id, author_id, category, question FROM `question`";
+        $sql = "SELECT id, author_id, category, question FROM `question` ORDER BY `category`";
 
         $results = $this->conn->query($sql);
 
