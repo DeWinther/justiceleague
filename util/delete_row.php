@@ -29,7 +29,7 @@ if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_POST["to_
     }
     else
     {
-        header("location: ../view/all_questions.php?error");
+        header("location: ../view/admin/questions/index.php?error");
         $conn->close();
         exit;
     }

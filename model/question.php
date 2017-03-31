@@ -1,18 +1,23 @@
 <?php
 
+include("/../util/db.php");
+
 class question
 {
+    private $conn;
     private $id;
     private $authorId;
     private $category;
     private $question;
 
-    public function __construct($id, $authorId, $category, $question)
+    public function __construct($id = null, $authorId = null, $category = null, $question = null)
     {
         $this->id = $id;
         $this->authorId = $authorId;
         $this->category = $category;
         $this->question = $question;
+
+        $this->conn = dbConnect("justice_league");
     }
 
     public function getId()
@@ -25,6 +30,19 @@ class question
         $this->id = $id;
     }
 
+    public function getAuthor($id){
+        $sql = "SELECT username FROM `user` WHERE id = ".$id;
+
+        $results = $this->conn->query($sql);
+
+        $author = $results->fetch_array();
+
+//        var_dump($author['username']);
+//        $this->conn->close();
+//        var_dump($results->fetch_array()[0]);
+
+        return $author['username'];
+    }
     public function getAuthorId()
     {
         return $this->authorId;
@@ -53,6 +71,21 @@ class question
     public function setQuestion($question)
     {
         $this->question = $question;
+    }
+    public function getQuestions(){
+
+        $sql = "SELECT id, author_id, category, question FROM `question`";
+
+        $results = $this->conn->query($sql);
+
+        $this->conn->close();
+
+        foreach ($results as $result){
+            $questions[] = $result;
+
+        }
+
+        return $questions;
     }
 
 }

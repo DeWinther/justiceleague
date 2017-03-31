@@ -17,7 +17,7 @@ if (isset($_POST["category"]) && isset($_POST["question"]) && $_POST["category"]
     if ($conn->query($sql) === TRUE)
     {
         echo "New record created successfully <br>";
-        header("location: ../view/all_questions.php?success");
+        header("location: ../view/index.php?success");
     }
     else
     {

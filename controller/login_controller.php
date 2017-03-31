@@ -26,7 +26,7 @@ if (isset($_GET["username"]) && isset($_GET["password"]))
         $_SESSION['user_id'] = $user_id;
 
         //echo "Logged in successfully <br>";
-        header("location: ../view/all_questions.php?success");
+        header("location: ../view/admin/questions/index.php?success");
         exit;
     }
     else
