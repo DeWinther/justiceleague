@@ -2,21 +2,21 @@
 
 session_start();
 
-if(isset($_GET['function'])){
-
-    $controller = new questionController($_GET['function']);
-
-    $controller->determineFunction();
-}else{
-    echo "Error:" ;
-    header("location: ../view/create_question.php?error");
-}
+//if(isset($_GET['function'])){
+//
+//    $controller = new questionController($_GET['function']);
+//
+//    $controller->determineFunction();
+//}else{
+//    echo "Error:" ;
+//    header("location: ../view/create_question.php?error");
+//}
 class questionController
 {
 
     private $function;
 
-    public function __construct($function = null){
+    public function __construct($function){
 
         $this->function = $function;
 
@@ -24,6 +24,7 @@ class questionController
     }
 
     public function determineFunction(){
+
 
         switch ($this->function){
 
@@ -36,11 +37,12 @@ class questionController
             case 'delete':
                     $this->delete();
                 break;
-            case 'getUsers':
-                    $this->getUsers();
             default:
-                    echo "Error:fdsfdsfsd" ;
-                    header("location: ../view/create_question.php?error");
+                    http_response_code(404);
+//                    echo $_SERVER['test'];
+//                    include('/../view/404.html');// provide your own HTML for the error page
+                    header('location: view/404.php');
+                    die();
                 break;
 
         }
@@ -48,11 +50,11 @@ class questionController
     }
 
     private function create(){
-        include_once('../requests/CreateQuestionRequest.php');
+        include_once('requests/CreateQuestionRequest.php');
         (new CreateQuestionRequest())->handle();
 
         echo "New record created successfully <br>";
-        header("location: ../view/admin/questions/index.php?success");
+        header("location: view/admin/questions/index.php?success");
     }
 
     private function update(){
@@ -61,11 +63,11 @@ class questionController
 
     private function delete(){
 
-        include_once('../requests/DeleteQuestionRequest.php');
+        include_once('requests/DeleteQuestionRequest.php');
         (new DeleteQuestionRequest())->handle();
 
         echo "Record deleted successfully <br>";
-        header("location: ../view/admin/questions/index.php?success");
+        header("location: __DIR__/view/admin/questions/index.php?success");
     }
 
     private function getUsers(){

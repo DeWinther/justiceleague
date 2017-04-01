@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: DeWinther
+ * Date: 4/1/2017
+ * Time: 3:32 PM
+ */
+
+if(isset($_GET['origin']) && isset($_GET['function'])){
+
+    $routes = new routes($_GET['function'], $_GET['origin']);
+
+    $routes->determineOrigin();
+}else{
+    echo "Error:" ;
+    header("location: ../view/create_question.php?error");
+}
+
+class routes
+{
+
+    private $function;
+
+    private $origin;
+
+    public function __construct($function, $origin){
+
+        $this->function = $function;
+
+        $this->origin = $origin;
+
+    }
+
+    public function determineOrigin(){
+
+        switch ($this->origin){
+
+            case 'login':
+                $this->login();
+                break;
+            case 'question':
+                $this->question();
+                break;
+            case 'category':
+                $this->category();
+                break;
+            case 'users':
+                $this->users();
+                break;
+            default:
+                http_response_code(404);
+                include('view/404.php'); // provide your own HTML for the error page
+                die();
+                break;
+
+        }
+
+    }
+
+    private function login(){
+        die('111');
+    }
+
+    private function question(){
+
+        include_once('controller/questionController.php');
+
+        $question = new questionController($this->function);
+
+        $question->determineFunction();
+    }
+
+    private function category(){
+
+    }
+
+    private function users(){
+
+    }
+
+
+}

@@ -1,6 +1,6 @@
 <?php
 
-include("../util/db.php");
+include("/util/db.php");
 
 class DeleteQuestionRequest
 {
@@ -34,7 +34,7 @@ class DeleteQuestionRequest
         {
             if(mysqli_affected_rows($conn) > 0)
             {
-                header("location: ../view/admin/questions/index.php");
+                header("location: view/admin/questions/index.php");
                 $conn->close();
                 exit;
             }
