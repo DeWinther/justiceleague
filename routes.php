@@ -36,7 +36,7 @@ class routes
 
         switch ($this->origin){
 
-            case 'login':
+            case 'access':
                 $this->login();
                 break;
             case 'question':
@@ -59,7 +59,9 @@ class routes
     }
 
     private function login(){
-        die('111');
+        include_once('controller/LoginController.php');
+
+        (new LoginController($this->function))->determineFunction();
     }
 
     private function question(){

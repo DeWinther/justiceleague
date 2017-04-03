@@ -2,13 +2,13 @@
 session_start();
 
 //Checks if user is logged in, otherwise redirect to login.
-if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
+if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_SESSION['admin'] == true)
 {
   // hmm
 }
 else
 {
-    header("location: login.php?auth");
+    header("location: ". __DIR__."/view/login.php?auth");
     exit;
 }
 include("../../navigation.php");

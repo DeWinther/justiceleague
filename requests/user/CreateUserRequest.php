@@ -1,0 +1,89 @@
+<?php
+include("/util/db.php");
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: DeWinther
+ * Date: 4/3/2017
+ * Time: 10:07 AM
+ */
+class CreateUserRequest
+{
+
+    private $conn;
+    private $username;
+    private $email;
+    private $password;
+
+    public function handle(){
+
+        $this->checkInput();
+
+        $this->checkUsername();
+
+        $this->persistUser();
+
+    }
+
+    private function checkInput(){
+        if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"])) {
+
+        }else{
+            //echo "no data supplied <br>";
+            header("location: ../view/signup.php?error");
+        }
+    }
+
+    private function checkUsername(){
+        $this->conn = dbConnect("justice_league");
+
+        //escaping SQL strings.
+        $this->username = mysqli_real_escape_string($this->conn, $_POST["username"]);
+        $this->email = mysqli_real_escape_string($this->conn, $_POST["email"]);
+        $password = mysqli_real_escape_string($this->conn, $_POST["password"]);
+        //hashing password
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
+
+        // use ctpye alpha?
+        // add CSRF token.
+
+
+        //Checks if username is taken
+        $sql = "SELECT * FROM `user` WHERE `username` = '$this->username'";
+        $result = $this->conn->query($sql);
+
+        if(mysqli_fetch_array($result) > 0)
+        {
+            //username taken
+            header("location: view/signup.php?taken");
+            exit();
+        }
+
+    }
+    private function persistUser(){
+
+            $sql = "INSERT INTO `user` (email, username, password) VALUES ('$this->email', '$this->username', '$this->password')";
+            if ($this->conn->query($sql) === TRUE)
+            {
+                //echo "New record created successfully <br>";
+                // gets the new ID from DB and puts in session
+                $sql = "SELECT * FROM `user` WHERE `username` = '$this->username'";
+                $result = $this->conn->query($sql);
+                $row = mysqli_fetch_array($result);
+                $user_id = $row['id'];
+
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $this->username;
+                $_SESSION['user_id'] = $user_id;
+                header("location: view/admin/users/all_users.php?success");
+            }
+            else
+            {
+                //echo "Error: " . $sql . "<br>" . $conn->error;
+                header("location: view/signup.php?error");
+            }
+//        }
+        $this->conn->close();
+    }
+}
+

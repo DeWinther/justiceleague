@@ -46,7 +46,7 @@ class categoryController
 
     private function create()
     {
-        include_once('../requests/CreateCategoryRequest.php');
+        include_once('../requests/category/CreateCategoryRequest.php');
         (new CreateCategoryRequest())->handle();
 
         echo "New record created successfully <br>";
@@ -60,7 +60,7 @@ class categoryController
 
     private function delete()
     {
-        include_once('../requests/DeleteCategoryRequest.php');
+        include_once('../requests/category/DeleteCategoryRequest.php');
         (new DeleteCategoryRequest())->handle();
 
         echo "Record deleted successfully <br>";
