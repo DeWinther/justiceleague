@@ -2,13 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55c4ec16-0588-49b0-9aa9-2e48897891f5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/banner.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controller/LoginController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/404.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/middleware/CheckUserRole.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requests/user/CreateUserRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requests/user/GetUserLoginRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/404.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/user/index.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/requests/CreateCategoryRequest.php" afterPath="$PROJECT_DIR$/requests/category/CreateCategoryRequest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/requests/CreateQuestionRequest.php" afterPath="$PROJECT_DIR$/requests/question/CreateQuestionRequest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/requests/DeleteCategoryRequest.php" afterPath="$PROJECT_DIR$/requests/category/DeleteCategoryRequest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/requests/DeleteQuestionRequest.php" afterPath="$PROJECT_DIR$/requests/question/DeleteQuestionRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/categoryController.php" afterPath="$PROJECT_DIR$/controller/categoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/questionController.php" afterPath="$PROJECT_DIR$/controller/questionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/iburn.css" afterPath="$PROJECT_DIR$/css/iburn.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/categories/index.php" afterPath="$PROJECT_DIR$/view/admin/categories/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/questions/create_question.php" afterPath="$PROJECT_DIR$/view/admin/questions/create_question.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/questions/index.php" afterPath="$PROJECT_DIR$/view/admin/questions/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/login.php" afterPath="$PROJECT_DIR$/view/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/navigation.php" afterPath="$PROJECT_DIR$/view/navigation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/signup.php" afterPath="$PROJECT_DIR$/view/signup.php" />
     </list>
-    <ignored path="justice_league.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path=".idea/dataSources.local.xml" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/controller/categoryController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="884">
-              <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+              <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -44,23 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateCategoryRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requests/CreateCategoryRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-              <folding>
-                <marker date="1490956878350" expanded="true" signature="772:826" ph="INSERT INTO `category`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/controller/questionController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/view/admin/categories/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="332">
-              <caret line="54" column="76" lean-forward="false" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
+              <caret line="56" column="76" lean-forward="false" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -89,14 +97,14 @@
       <file leaf-file-name="iburn.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/iburn.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+            <state relative-caret-position="562">
+              <caret line="109" column="28" lean-forward="false" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="question.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="question.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/question.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="389">
@@ -123,96 +131,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1490968892608" expanded="true" signature="71213:71230" ph="..." />
-                <marker date="1490968892608" expanded="true" signature="71213:71261" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>all_questions</find>
-      <find>$row</find>
-      <find>404040</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/signup.php" />
-        <option value="$PROJECT_DIR$/iburn.css" />
-        <option value="$PROJECT_DIR$/question_handler.php" />
-        <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/login_handler.php" />
-        <option value="$PROJECT_DIR$/create_question_handler.php" />
-        <option value="$PROJECT_DIR$/create_question.php" />
-        <option value="$PROJECT_DIR$/delete.php" />
-        <option value="$PROJECT_DIR$/all_questions.php" />
-        <option value="$PROJECT_DIR$/all_users.php" />
-        <option value="$PROJECT_DIR$/signup_handler.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/logout.php" />
-        <option value="$PROJECT_DIR$/entity/test.php" />
-        <option value="$PROJECT_DIR$/handler/login_handler.php" />
-        <option value="$PROJECT_DIR$/view/all_users.php" />
-        <option value="$PROJECT_DIR$/handler/signup_handler.php" />
-        <option value="$PROJECT_DIR$/util/category_fetcher.php" />
-        <option value="$PROJECT_DIR$/util/categories_fetcher.php" />
-        <option value="$PROJECT_DIR$/entity/user.php" />
-        <option value="$PROJECT_DIR$/handler/create_question_handler.php" />
-        <option value="$PROJECT_DIR$/view/login.php" />
-        <option value="$PROJECT_DIR$/model/answer.php" />
-        <option value="$PROJECT_DIR$/model/user.php" />
-        <option value="$PROJECT_DIR$/controller/create_question_controller.php" />
-        <option value="$PROJECT_DIR$/controller/signup_controller.php" />
-        <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/view/create_question.php" />
-        <option value="$PROJECT_DIR$/requests/CreateQuestionRequest.php" />
-        <option value="$PROJECT_DIR$/util/db.php" />
-        <option value="$PROJECT_DIR$/view/all_questions.php" />
-        <option value="$PROJECT_DIR$/controller/login_controller.php" />
-        <option value="$PROJECT_DIR$/view/admin/questions/all_questions.php" />
-        <option value="$PROJECT_DIR$/view/admin/all_users.php" />
-        <option value="$PROJECT_DIR$/nav_bar.php" />
-        <option value="$PROJECT_DIR$/controller/questionController.php" />
-        <option value="$PROJECT_DIR$/util/delete_row.php" />
-        <option value="$PROJECT_DIR$/css/iburn.css" />
-        <option value="$PROJECT_DIR$/view/admin/questions/index.php" />
-        <option value="$PROJECT_DIR$/view/admin/questions/create_question.php" />
-        <option value="$PROJECT_DIR$/view/admin/users/all_users.php" />
-        <option value="$PROJECT_DIR$/view/admin/categories/create_category.php" />
-        <option value="$PROJECT_DIR$/requests/CreateCategoryRequest.php" />
-        <option value="$PROJECT_DIR$/view/admin/categories/index.php" />
-        <option value="$PROJECT_DIR$/requests/DeleteQuestionRequest.php" />
-        <option value="$PROJECT_DIR$/controller/categoryController.php" />
-        <option value="$PROJECT_DIR$/requests/DeleteCategoryRequest.php" />
-        <option value="$PROJECT_DIR$/view/navigation.php" />
-        <option value="$PROJECT_DIR$/model/question.php" />
-        <option value="$PROJECT_DIR$/model/category.php" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
@@ -223,10 +159,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpServers">
-    <servers />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -413,29 +345,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="justice_league" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="justiceleague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\justiceleague\view\admin\users" />
-      <recent name="C:\wamp64\www\justiceleague\css\font" />
-      <recent name="C:\wamp64\www\justiceleague\view\admin" />
-      <recent name="C:\wamp64\www\justiceleague\view\admin\questions" />
-      <recent name="C:\wamp64\www\justice_league\handler" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -481,10 +410,10 @@
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
       <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -523,7 +452,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <option name="arquillianRunConfiguration">
@@ -673,10 +602,8 @@
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="false" />
+      <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -808,12 +735,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -842,35 +763,6 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
-      <method />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -879,29 +771,13 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="55c4ec16-0588-49b0-9aa9-2e48897891f5" name="Default" comment="" />
-      <created>1488487217153</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1488487217153</updated>
-      <workItem from="1488487220062" duration="18670000" />
-      <workItem from="1488788462111" duration="35846000" />
-      <workItem from="1489476322739" duration="1357000" />
-      <workItem from="1489660747220" duration="825000" />
-      <workItem from="1489664204492" duration="7274000" />
-      <workItem from="1489877339420" duration="11825000" />
-      <workItem from="1490173670568" duration="37869000" />
-      <workItem from="1490900740516" duration="17024000" />
-      <workItem from="1490955322464" duration="6210000" />
-    </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136900000" />
+    <option name="totallyTimeSpent" value="78000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -936,25 +812,15 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273495" sideWeight="0.4887097" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/controller/login_controller.php">
@@ -1204,9 +1070,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="28" lean-forward="false" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <marker date="1490955254579" expanded="true" signature="828:928" ph="INSERT INTO `question`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,9 +1096,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="1" />
-          <folding>
-            <marker date="1490957652175" expanded="true" signature="543:589" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,9 +1104,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="54" lean-forward="false" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
-          <folding>
-            <marker date="1490958001498" expanded="true" signature="588:634" ph="DELETE FROM " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1119,7 @@
     <entry file="file://$PROJECT_DIR$/view/admin/categories/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
-          <caret line="54" column="76" lean-forward="false" selection-start-line="54" selection-start-column="76" selection-end-line="54" selection-end-column="76" />
+          <caret line="56" column="76" lean-forward="false" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
           <folding />
         </state>
       </provider>
@@ -1267,7 +1127,7 @@
     <entry file="file://$PROJECT_DIR$/controller/questionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="1" />
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1275,7 +1135,7 @@
     <entry file="file://$PROJECT_DIR$/controller/categoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
-          <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1284,36 +1144,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
           <caret line="38" column="53" lean-forward="false" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-          <folding>
-            <marker date="1490956878350" expanded="true" signature="772:826" ph="INSERT INTO `category`... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/iburn.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="105" column="28" lean-forward="true" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+        <state relative-caret-position="562">
+          <caret line="109" column="28" lean-forward="false" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1490968892608" expanded="true" signature="71213:71230" ph="..." />
-            <marker date="1490968892608" expanded="true" signature="71213:71261" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1337,6 +1184,14 @@
             <marker date="1490967407261" expanded="true" signature="1515:1571" ph="SELECT id, a... question" />
             <marker date="1490967407261" expanded="true" signature="1515:1591" ph="SELECT id, a... question" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -11,6 +11,10 @@ body {
 h2 {
     color: white;
 }
+
+.page404{
+
+}
 .nav>li>a:hover{
     background-color: #333;
     color: #FFFFFF;
@@ -106,6 +110,7 @@ nav > ul > li > a {
     background-color: white;
     color: #333;
     border: 1px solid #333;
+    transition: background-color 0.3s ease;
 }
 
 .marginTop{

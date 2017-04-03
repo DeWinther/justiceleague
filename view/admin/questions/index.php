@@ -2,13 +2,13 @@
 session_start();
 
 //Checks if user is logged in, otherwise redirect to login.
-if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
+if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_SESSION['admin'] == true)
 {
   // hmm
 }
 else
 {
-    header("location: login.php?auth");
+    header("location: ". __DIR__."/view/login.php?auth");
     exit;
 }
 include("../../navigation.php");
@@ -34,6 +34,7 @@ include("../../navigation.php");
             <th>Category</th>
             <th>Question</th>
             <th></th>
+            <th></th>
             </thead>
 
             <tbody>
@@ -51,7 +52,8 @@ include("../../navigation.php");
                             '<td>' . $test->getAuthor($question["author_id"])  . '</td>' .
                             '<td>' . $question["category"] . '</td>' .
                             '<td>' . $question["question"] . '</td>' .
-                            '<form action="../../../controller/questionController.php?function=delete" method="post">' .
+                            '<td><i class="fa fa-cogs"></i></td>'.
+                            '<form action="../../../routes.php?function=delete&origin=question" method="post">' .
                                 '<td>' .
                                     '<input type="hidden" name="to_delete" value="'. $question["id"] .'">' .
                                     '<input type="hidden" name="return_to" value="questions">' .

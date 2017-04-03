@@ -33,7 +33,7 @@ $categories = (new category())->getAllUniqueCategories();
 <div class="container" style="margin: 0 auto; width: 20%">
     <h2 class="form-signup-heading">Create Question</h2>
     <div style="margin-top: 30px; margin-bottom: 30px">
-        <form action="../../../controller/questionController.php?function=create" method="post">
+        <form action="../../../routes.php?function=create&origin=question" method="post">
             <select class="form-control" id="category" name="category" style="border-radius: 0">
                 <option value="0">--Select Category--</option>
                 <?php foreach ($categories as $category){ ?>
