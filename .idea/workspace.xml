@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55c4ec16-0588-49b0-9aa9-2e48897891f5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/question.php" afterPath="$PROJECT_DIR$/model/question.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="justice_league.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="question.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="question.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/question.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
+            <state relative-caret-position="389">
               <caret line="76" column="91" lean-forward="false" selection-start-line="76" selection-start-column="91" selection-end-line="76" selection-end-column="91" />
               <folding>
                 <marker date="1490967407261" expanded="true" signature="646:685" ph="SELECT usern... user" />
@@ -123,12 +123,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1490968892608" expanded="true" signature="71213:71230" ph="..." />
+                <marker date="1490968892608" expanded="true" signature="71213:71261" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -407,20 +410,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="justice_league" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="justiceleague" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -904,15 +893,15 @@
       <workItem from="1489877339420" duration="11825000" />
       <workItem from="1490173670568" duration="37869000" />
       <workItem from="1490900740516" duration="17024000" />
-      <workItem from="1490955322464" duration="5196000" />
+      <workItem from="1490955322464" duration="6210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135886000" />
+    <option name="totallyTimeSpent" value="136900000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1317,14 +1306,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/question.php">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="76" column="91" lean-forward="false" selection-start-line="76" selection-start-column="91" selection-end-line="76" selection-end-column="91" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1490967407261" expanded="true" signature="646:685" ph="SELECT usern... user" />
-            <marker date="1490967407261" expanded="true" signature="1515:1571" ph="SELECT id, a... question" />
-            <marker date="1490967407261" expanded="true" signature="1515:1591" ph="SELECT id, a... question" />
+            <marker date="1490968892608" expanded="true" signature="71213:71230" ph="..." />
+            <marker date="1490968892608" expanded="true" signature="71213:71261" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1340,11 +1328,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/model/question.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="389">
+          <caret line="76" column="91" lean-forward="false" selection-start-line="76" selection-start-column="91" selection-end-line="76" selection-end-column="91" />
+          <folding>
+            <marker date="1490967407261" expanded="true" signature="646:685" ph="SELECT usern... user" />
+            <marker date="1490967407261" expanded="true" signature="1515:1571" ph="SELECT id, a... question" />
+            <marker date="1490967407261" expanded="true" signature="1515:1591" ph="SELECT id, a... question" />
+          </folding>
         </state>
       </provider>
     </entry>
