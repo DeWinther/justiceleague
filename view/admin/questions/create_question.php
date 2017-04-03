@@ -12,14 +12,19 @@ else {
     header("location: login.php?auth");
     exit;
 }
-include("../nav_bar.php");
+include("../navigation.php");
+
+include ("../../../model/category.php");
+
+$categories = (new category())->getAllUniqueCategories();
+
 ?>
 
 <html>
 <head>
     <title>Create Question</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/iburn.css">
+    <link rel="stylesheet" href="../../../css/iburn.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -28,17 +33,18 @@ include("../nav_bar.php");
 <div class="container" style="margin: 0 auto; width: 20%">
     <h2 class="form-signup-heading">Create Question</h2>
     <div style="margin-top: 30px; margin-bottom: 30px">
-        <form action="../controller/create_question_controller.php" method="post">
-            <select class="form-control" id="category" name="category">
+        <form action="../../../routes.php?function=create&origin=question" method="post">
+            <select class="form-control" id="category" name="category" style="border-radius: 0">
                 <option value="0">--Select Category--</option>
-                <option value="cat">cat</option>
-                <option value="food">food</option>
+                <?php foreach ($categories as $category){ ?>
+                    <option value="<?php echo $category ?>"><?php echo $category ?></option>
+                <?php  }?>
             </select>
             <br>
             <label for="question" class="sr-only">Question</label>
-            <input type="text" name="question" id="question" class="form-control" placeholder="Question" required>
+            <input type="text" name="question" id="question" class="form-control" placeholder="Question" style="border-radius: 0" required>
             <br>
-            <button class="btn btn-primary btn-block" type="submit">Submit </button>
+            <input class="standardButton" style="width: 100%" type="submit" value="Submit">
         </form>
     </div>
 </div>

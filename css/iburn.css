@@ -1,12 +1,118 @@
+@font-face {
+    font-family: brand;
+    src: url('font/rns_baruta_black/RNS-B.ttf');
+}
+
+
 body {
-    background-color: #404040;
+    background-color: #FFFFFF;
 }
 
 h2 {
     color: white;
 }
 
+.page404{
+
+}
+.nav>li>a:hover{
+    background-color: #333;
+    color: #FFFFFF;
+
+}
 table {
-    background-color: whitesmoke;
+    background-color: white;
+    border: none !important;
 }
 
+table th{
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-bottom: 1px solid black !important;
+}
+
+table td{
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px dashed black !important;
+    padding: 15px 0 !important;
+}
+
+.brand{
+    margin: 0 30px 0 0;
+    font-family: brand;
+    font-size: 30px;
+    color: #aaa;
+}
+
+.brand:hover{
+    color: #FFFFFF;
+}
+
+.navigationUser{
+    color: #aaa;
+    margin: 0 50px 0 0;
+    display: block;
+    line-height: 2em;
+    padding: 4px;
+    font-size: 20px;
+}
+
+nav {
+    background-color: #333;
+    margin: 0;
+    overflow: hidden;
+    padding: 10px 150px;
+    height: 75px;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    /* This allow us to arrange list items in a row, without using float */
+    display: inline-block;
+    list-style-type: none;
+}
+
+/* Create a style for the first level items */
+nav > ul > li > a {
+    color: #aaa;
+    background-color:#333;
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+}
+
+.deleteButton{
+    border: none !important;
+    background: none;
+    margin: 0 auto;
+    display: block;
+}
+
+.standardButton{
+    width: 200px;
+    height: 40px;
+    background: #333;
+    border: none;
+    color: white;
+    margin: 0 auto;
+    display: block;
+    transition: background-color 0.3s ease-in;
+}
+
+.standardButton:hover{
+    background-color: white;
+    color: #333;
+    border: 1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+.marginTop{
+    margin-top: 50px;
+}
