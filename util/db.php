@@ -2,7 +2,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "root";
 
 function dbConnect($dbname='') {
     global $dbhost, $dbuser, $dbpass;
