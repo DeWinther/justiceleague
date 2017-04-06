@@ -1,6 +1,7 @@
 <?php
 
-//include('/util/db.php');
+//include('../config.php');
+include('../util/db.php');
 
 
 
@@ -31,3 +32,5 @@ class CheckUserRole
     }
 
 }
+
+?>

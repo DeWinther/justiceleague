@@ -2,12 +2,14 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "";
-$port = "3307";
+$dbpass = "root";
+$dbpass = "root";
+$port = "8889";
 
 function dbConnect($dbname='') {
 
-    $conn = new mysqli("localhost", "root", "", "justice_league");
+
+    $conn = new mysqli("localhost", "root", "root", "justice_league");
     if ($conn->connect_errno) {
         echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
     }

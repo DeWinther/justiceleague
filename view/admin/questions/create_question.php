@@ -12,7 +12,7 @@ else {
     header("location: login.php?auth");
     exit;
 }
-include("../../navigation.php");
+include("../navigation.php");
 
 include ("../../../model/category.php");
 

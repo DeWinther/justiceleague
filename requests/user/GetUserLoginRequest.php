@@ -1,6 +1,7 @@
 <?php
 
-include("/util/db.php");
+
+include(ROOT_DIR. "/util/db.php");
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,8 +11,8 @@ include("/util/db.php");
  */
 class GetUserLoginRequest
 {
-
     public function handle(){
+
 
         $this->checkInput();
 
@@ -32,7 +33,9 @@ class GetUserLoginRequest
     }
 
     private function checkLogin(){
+
         $conn = dbConnect("justice_league");
+
 
         //not always bulletproof - do preparedstatement
         $username = mysqli_real_escape_string($conn, $_GET["username"]);
@@ -45,6 +48,7 @@ class GetUserLoginRequest
         $temppass = $row['password'];
         //    $tempusername = $row['username'];
         $conn->close();
+
 
         if(password_verify($userpassword, $temppass))
         {

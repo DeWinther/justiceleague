@@ -7,6 +7,9 @@
  * Time: 3:32 PM
  */
 
+
+include('config.php');
+
 if(isset($_GET['origin']) && isset($_GET['function'])){
 
     $routes = new routes($_GET['function'], $_GET['origin']);

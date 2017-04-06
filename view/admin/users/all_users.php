@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include('../../../config.php');
+
 //Checks if user is logged in, otherwise redirect to login.
 if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
 {
@@ -10,7 +12,7 @@ else {
     header("location: login.php?auth");
     exit;
 }
-include("../../navigation.php");
+include("../navigation.php");
 ?>
 <html>
 <head>
@@ -37,7 +39,7 @@ include("../../navigation.php");
 
             <tbody>
                 <?php
-                    include("../../../util/db.php");
+                    include(ROOT_DIR. "/util/db.php");
                     $conn = dbConnect("justice_league");
 
                     $sql = "SELECT id, username, email, password FROM `user`";

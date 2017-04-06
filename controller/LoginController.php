@@ -2,6 +2,11 @@
 
 session_start();
 
+include(ROOT_DIR . '/middleware/CheckUserRole.php');
+
+
+
+
 //if(isset($_GET['function'])){
 //
 //    $controller = new questionController($_GET['function']);
@@ -47,16 +52,23 @@ class LoginController
 
     private function login(){
 
-        include_once('requests/user/GetUserLoginRequest.php');
+
+        include_once(ROOT_DIR . '/requests/user/GetUserLoginRequest.php');
+
 
         (new GetUserLoginRequest())->handle();
 
 
-        include_once('middleware/CheckUserRole.php');
+//        die(ROOT_DIR . '/middleware/CheckUserRole.php');
+
+//        include_once(ROOT_DIR . '/middleware/CheckUserRole.php');
+
+        (new CheckUserRole())->isAdmin();
 
         if((new CheckUserRole())->isAdmin()){
 
             $_SESSION['admin'] = true;
+
             header("location: view/admin/questions/index.php?success");
         }else{
             header("location: view/user/index.php?success");

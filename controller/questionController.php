@@ -50,7 +50,7 @@ class questionController
     }
 
     private function create(){
-        include_once('requests/question/CreateQuestionRequest.php');
+        include_once(ROOT_DIR.'/requests/question/CreateQuestionRequest.php');
         (new CreateQuestionRequest())->handle();
 
         echo "New record created successfully <br>";
@@ -63,7 +63,7 @@ class questionController
 
     private function delete(){
 
-        include_once('requests/question/DeleteQuestionRequest.php');
+        include_once(ROOT_DIR.'/requests/question/DeleteQuestionRequest.php');
         (new DeleteQuestionRequest())->handle();
 
         echo "Record deleted successfully <br>";
