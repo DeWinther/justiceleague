@@ -53,8 +53,8 @@ class questionController
         include_once(ROOT_DIR.'/requests/question/CreateQuestionRequest.php');
         (new CreateQuestionRequest())->handle();
 
-        echo "New record created successfully <br>";
-        header("location: view/admin/questions/index.php?success");
+//        echo "New record created successfully <br>";
+        header("location:". JS. "/view/admin/questions/index.php?success");
     }
 
     private function update(){
@@ -67,7 +67,7 @@ class questionController
         (new DeleteQuestionRequest())->handle();
 
         echo "Record deleted successfully <br>";
-        header("location: __DIR__/view/admin/questions/index.php?success");
+        header("location:". JS ."/view/admin/questions/index.php?success");
     }
 
     private function getUsers(){
