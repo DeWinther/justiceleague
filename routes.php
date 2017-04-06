@@ -69,7 +69,8 @@ class routes
 
     private function question(){
 
-        include_once('controller/questionController.php');
+
+        include_once(ROOT_DIR.'/controller/questionController.php');
 
         $question = new questionController($this->function);
 
