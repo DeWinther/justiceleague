@@ -14,7 +14,7 @@ else
     header("location: ". __DIR__."/view/login.php?auth");
     exit;
 }
-include("../navigation.php");
+include(ROOT_DIR ."/view/admin/navigation.php");
 ?>
 
 <html>

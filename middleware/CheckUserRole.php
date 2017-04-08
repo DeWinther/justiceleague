@@ -1,7 +1,7 @@
 <?php
 
 //include('../config.php');
-include('../util/db.php');
+include('/../util/db.php');
 
 
 
@@ -20,6 +20,8 @@ class CheckUserRole
         $result = $conn->query($sql);
 
         $role = $result->fetch_array();
+
+        $conn->close();
 
         if(is_null($role)){
             return false;

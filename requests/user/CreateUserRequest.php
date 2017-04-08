@@ -1,5 +1,5 @@
 <?php
-include("/util/db.php");
+include(ROOT_DIR . "/util/db.php");
 
 /**
  * Created by IntelliJ IDEA.

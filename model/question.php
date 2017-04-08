@@ -1,6 +1,6 @@
 <?php
-include('../config.php');
-include(ROOT_DIR."/util/db.php");
+
+include(ROOT_DIR . "/util/db.php");
 
 class question
 {

@@ -1,5 +1,5 @@
 <?php
-include('../config.php');
+
 include(ROOT_DIR."/util/db.php");
 
 class category

@@ -1,7 +1,7 @@
 <?php
 
 
-include(ROOT_DIR. "/util/db.php");
+include_once(ROOT_DIR . "/util/db.php");
 
 /**
  * Created by IntelliJ IDEA.

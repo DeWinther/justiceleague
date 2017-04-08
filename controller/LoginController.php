@@ -71,6 +71,7 @@ class LoginController
 
             header("location: view/admin/questions/index.php?success");
         }else{
+
             header("location: view/user/index.php?success");
         }
     }

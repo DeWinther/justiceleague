@@ -1,6 +1,6 @@
 <?php
 
-include("../util/db.php");
+include(ROOT_DIR . "/util/db.php");
 
 class DeleteCategoryRequest
 {
@@ -34,7 +34,7 @@ class DeleteCategoryRequest
         {
             if(mysqli_affected_rows($conn) > 0)
             {
-                header("location: ../view/admin/categories/index.php");
+                header("location: view/admin/categories/index.php");
                 $conn->close();
                 exit;
             }
