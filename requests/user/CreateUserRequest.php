@@ -23,6 +23,8 @@ class CreateUserRequest
 
         $this->checkUsername();
 
+        $this->checkPassword();
+
         $this->persistUser();
     }
 
@@ -42,9 +44,9 @@ class CreateUserRequest
         //escaping SQL strings.
         $this->username = mysqli_real_escape_string($this->conn, $_POST["username"]);
         $this->email = mysqli_real_escape_string($this->conn, $_POST["email"]);
-        $password = mysqli_real_escape_string($this->conn, $_POST["password"]);
+        $this->password = mysqli_real_escape_string($this->conn, $_POST["password"]);
         //hashing password
-        $this->password = password_hash($password, PASSWORD_DEFAULT);
+//        $this->password = password_hash($password, PASSWORD_DEFAULT);
 
         // use ctpye alpha?
         // add CSRF token.
@@ -62,6 +64,31 @@ class CreateUserRequest
        // $this->conn->close();
 
     }
+
+    private function checkPassword(){
+
+
+        if(strlen($this->password) < 8){
+            header("location: view/signup.php?length");
+            exit();
+        }
+        if (!preg_match('/[A-Z]+/', $this->password))
+        {
+            header("location: view/signup.php?uppercase");
+            exit();
+        }
+        if (!preg_match('/[a-z]+/', $this->password))
+        {
+            header("location: view/signup.php?lowercase");
+            exit();
+        }
+        if (!preg_match('/[0-9]+/', $this->password))
+        {
+            header("location: view/signup.php?number");
+            exit();
+        }
+    }
+
     private function persistUser(){
 
 //        $instance = DbConnector::getInstance();
@@ -92,5 +119,6 @@ class CreateUserRequest
 //        }
 //        $this->conn->close();
     }
+
 }
 
