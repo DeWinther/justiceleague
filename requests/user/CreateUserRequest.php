@@ -1,5 +1,5 @@
 <?php
-include("/util/db.php");
+include(ROOT_DIR . "/util/db.php");
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,7 +9,6 @@ include("/util/db.php");
  */
 class CreateUserRequest
 {
-
     private $conn;
     private $username;
     private $email;
@@ -17,12 +16,14 @@ class CreateUserRequest
 
     public function handle(){
 
+        $instance = DbConnector::getInstance();
+        $this->conn = $instance->getConnection();
+
         $this->checkInput();
 
         $this->checkUsername();
 
         $this->persistUser();
-
     }
 
     private function checkInput(){
@@ -35,7 +36,8 @@ class CreateUserRequest
     }
 
     private function checkUsername(){
-        $this->conn = dbConnect("justice_league");
+//        $instance = DbConnector::getInstance();
+//        $this->conn = $instance->getConnection();
 
         //escaping SQL strings.
         $this->username = mysqli_real_escape_string($this->conn, $_POST["username"]);
@@ -47,7 +49,6 @@ class CreateUserRequest
         // use ctpye alpha?
         // add CSRF token.
 
-
         //Checks if username is taken
         $sql = "SELECT * FROM `user` WHERE `username` = '$this->username'";
         $result = $this->conn->query($sql);
@@ -58,32 +59,38 @@ class CreateUserRequest
             header("location: view/signup.php?taken");
             exit();
         }
+       // $this->conn->close();
 
     }
     private function persistUser(){
 
-            $sql = "INSERT INTO `user` (email, username, password) VALUES ('$this->email', '$this->username', '$this->password')";
-            if ($this->conn->query($sql) === TRUE)
-            {
-                //echo "New record created successfully <br>";
-                // gets the new ID from DB and puts in session
-                $sql = "SELECT * FROM `user` WHERE `username` = '$this->username'";
-                $result = $this->conn->query($sql);
-                $row = mysqli_fetch_array($result);
-                $user_id = $row['id'];
+//        $instance = DbConnector::getInstance();
+//        $this->conn = $instance->getConnection();
 
-                $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $this->username;
-                $_SESSION['user_id'] = $user_id;
-                header("location: view/admin/users/all_users.php?success");
-            }
-            else
-            {
-                //echo "Error: " . $sql . "<br>" . $conn->error;
-                header("location: view/signup.php?error");
-            }
+        $stmt = $this->conn->prepare("INSERT INTO `user` (email, username, password) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $this->email, $this->username, $this->password);
+
+        if ($stmt->execute() === TRUE)
+        {
+            //echo "New record created successfully <br>";
+            // gets the new ID from DB and puts in session
+            $sql = "SELECT * FROM `user` WHERE `username` = '$this->username'";
+            $result = $this->conn->query($sql);
+            $row = mysqli_fetch_array($result);
+            $user_id = $row['id'];
+
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $this->username;
+            $_SESSION['user_id'] = $user_id;
+            header("location: view/admin/users/all_users.php?success");
+        }
+        else
+        {
+            //echo "Error: " . $sql . "<br>" . $conn->error;
+            header("location: view/signup.php?error");
+        }
 //        }
-        $this->conn->close();
+//        $this->conn->close();
     }
 }
 

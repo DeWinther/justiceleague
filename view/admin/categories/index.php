@@ -54,7 +54,7 @@ include("../navigation.php");
                     '<tr>' .
                     '<td>' . $category["id"] . '</td>' .
                     '<td>' . $category["category"] . '</td>' .
-                    '<form action="../../../controller/categoryController.php?function=delete" method="post">' .
+                    '<form action="../../../routes.php?function=delete&origin=category" method="post">' .
                     '<td>' .
                     '<input type="hidden" name="to_delete" value="'. $category["id"] .'">' .
                     '<input type="hidden" name="return_to" value="categories">' .

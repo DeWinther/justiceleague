@@ -1,5 +1,5 @@
 <?php
-include('../config.php');
+
 include(ROOT_DIR."/util/db.php");
 
 class category
@@ -12,7 +12,9 @@ class category
         $this->id = $id;
         $this->category = $category;
 
-        $this->conn = dbConnect("justice_league");
+        $instance = DbConnector::getInstance();
+        $this->conn = $instance->getConnection();
+//        $this->conn = dbConnect("justice_league");
     }
 
     public function getId()
@@ -54,8 +56,6 @@ class category
         $sql = "SELECT id, category FROM `category`";
 
         $results = $this->conn->query($sql);
-
-        $this->conn->close();
 
         foreach ($results as $result){
             $questions[] = $result;

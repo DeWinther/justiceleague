@@ -63,7 +63,7 @@ class LoginController
 
 //        include_once(ROOT_DIR . '/middleware/CheckUserRole.php');
 
-        (new CheckUserRole())->isAdmin();
+//        (new CheckUserRole())->isAdmin();
 
         if((new CheckUserRole())->isAdmin()){
 
@@ -71,6 +71,7 @@ class LoginController
 
             header("location: view/admin/questions/index.php?success");
         }else{
+
             header("location: view/user/index.php?success");
         }
     }
