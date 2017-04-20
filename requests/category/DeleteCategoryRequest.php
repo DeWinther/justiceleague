@@ -35,7 +35,6 @@ class DeleteCategoryRequest
             if(mysqli_affected_rows($conn) > 0)
             {
                 header("location: view/admin/categories/index.php");
-                $conn->close();
                 exit;
             }
             else
@@ -46,7 +45,6 @@ class DeleteCategoryRequest
         else
         {
             header("location: ../view/admin/categories/index.php?error");
-            $conn->close();
             exit;
         }
     }

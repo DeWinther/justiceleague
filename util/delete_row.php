@@ -19,7 +19,6 @@ if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_POST["to_
         if(mysqli_affected_rows($conn) > 0)
         {
             header($location_string);
-            $conn->close();
             exit;
         }
         else
@@ -30,7 +29,6 @@ if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_POST["to_
     else
     {
         header("location: ../view/admin/questions/index.php?error");
-        $conn->close();
         exit;
     }
 }

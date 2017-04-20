@@ -1,27 +1,24 @@
 <?php
 
 //include('../config.php');
-include('/../util/db.php');
-
-
+//include(ROOT_DIR . "/util/db.php");
 
 class CheckUserRole
 {
 
     function isAdmin(){
 
-        $conn = dbConnect("justice_league");
-
+        $instance = DbConnector::getInstance();
+        $conn = $instance->getConnection();
+//
         $id = $_SESSION['user_id'];
 
-
-        $sql = "SELECT * FROM `roles` WHERE user_id =".$_SESSION['user_id'];
+        $sql = "SELECT * FROM `roles` WHERE user_id ='$id'";
 
         $result = $conn->query($sql);
 
-        $role = $result->fetch_array();
 
-        $conn->close();
+        $role = $result->fetch_array();
 
         if(is_null($role)){
             return false;

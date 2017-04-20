@@ -30,14 +30,14 @@ class CreateCategoryRequest
         $category = mysqli_real_escape_string($conn, $_POST["category"]);
         $user_id = $_SESSION['user_id'];
         // should check CSRF token!
-        // and prepared statement. - Only admins can do this though..
 
-        $sql = "INSERT INTO `category` (category) VALUES ('$category')";
-        if ($conn->query($sql) != TRUE)
+        $stmt = $conn->prepare("INSERT INTO `category` (category) VALUES (?)");
+        $stmt->bind_param("s", $category);
+
+        if ($stmt->execute() != TRUE)
         {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . "<br>" . $conn->error;
             header("location: ../view/create_category.php?error");
         }
-        $conn->close();
     }
 }
