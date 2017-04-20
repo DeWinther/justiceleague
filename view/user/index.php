@@ -1,8 +1,11 @@
 <?php
 session_start();
 
+include('../../config.php');
+
+
 //Checks if user is logged in, otherwise redirect to login.
-if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
+if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_SESSION['admin'] == false)
 {
     // hmm
 }
@@ -11,7 +14,7 @@ else
     header("location: ../login.php?auth");
     exit;
 }
-include("../navigation.php");
+include(ROOT_DIR ."/view/user/navigation.php");
 ?>
 
 <html>
@@ -38,7 +41,7 @@ include("../navigation.php");
         <tbody>
         <?php
 
-        include('../../model/question.php');
+        include(ROOT_DIR .'/model/question.php');
 
         $questions = (new question())->getQuestions();
         $test = new question();
