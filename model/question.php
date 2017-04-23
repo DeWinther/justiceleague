@@ -1,6 +1,6 @@
 <?php
 
-include("/../util/db.php");
+include(ROOT_DIR . "/util/db.php");
 
 class question
 {
@@ -17,7 +17,9 @@ class question
         $this->category = $category;
         $this->question = $question;
 
-        $this->conn = dbConnect("justice_league");
+        $instance = DbConnector::getInstance();
+        $this->conn = $instance->getConnection();
+//        $this->conn = dbConnect("justice_league");
     }
 
     public function getId()
@@ -78,7 +80,7 @@ class question
 
         $results = $this->conn->query($sql);
 
-        $this->conn->close();
+//        $this->conn->close();
 
         foreach ($results as $result){
             $questions[] = $result;

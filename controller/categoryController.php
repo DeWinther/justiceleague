@@ -2,16 +2,16 @@
 
 session_start();
 
-if(isset($_GET['function']))
-{
-    $controller = new categoryController($_GET['function']);
-    $controller->determineFunction();
-}
-else
-{
-    echo "Error:" ;
-    header("location: ../view/create_question.php?error");
-}
+//if(isset($_GET['function']))
+//{
+//    $controller = new categoryController($_GET['function']);
+//    $controller->determineFunction();
+//}
+//else
+//{
+//    echo "Error:" ;
+//    header("location: ../view/create_question.php?error");
+//}
 
 class categoryController
 {
@@ -37,6 +37,7 @@ class categoryController
                 break;
             case 'getUsers':
                 $this->getUsers();
+                break;
             default:
                 echo "Error: no CRUD function" ;
                 header("location: ../view/create_category.php?error");
@@ -46,11 +47,11 @@ class categoryController
 
     private function create()
     {
-        include_once('../requests/category/CreateCategoryRequest.php');
+        include_once(ROOT_DIR .'/requests/category/CreateCategoryRequest.php');
         (new CreateCategoryRequest())->handle();
 
         echo "New record created successfully <br>";
-        header("location: ../view/admin/categories/index.php?success");
+        header("location:". JS ."/view/admin/categories/index.php?success");
     }
 
     private function update()
@@ -60,11 +61,11 @@ class categoryController
 
     private function delete()
     {
-        include_once('../requests/category/DeleteCategoryRequest.php');
+        include_once(ROOT_DIR .'/requests/category/DeleteCategoryRequest.php');
         (new DeleteCategoryRequest())->handle();
 
         echo "Record deleted successfully <br>";
-        header("location: ../view/admin/categories/index.php?success");
+        header("location:". JS ."/view/admin/categories/index.php?success");
     }
 
     private function getUsers()

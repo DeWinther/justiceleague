@@ -3,6 +3,8 @@
 
 session_start();
 
+include('../../../config.php');
+
 //Checks if user is logged in, otherwise redirect to login.
 if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
 {
@@ -12,9 +14,9 @@ else {
     header("location: login.php?auth");
     exit;
 }
-include("../../navigation.php");
+include(ROOT_DIR. "/view/admin/navigation.php");
 
-include ("../../../model/category.php");
+include (ROOT_DIR. "/model/category.php");
 
 $categories = (new category())->getAllUniqueCategories();
 
@@ -24,7 +26,7 @@ $categories = (new category())->getAllUniqueCategories();
 <head>
     <title>Create Question</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/iburn.css">
+    <link rel="stylesheet" href="<?php echo  JS . '/css/iburn.css'; ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>

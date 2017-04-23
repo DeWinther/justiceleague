@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include('../../../config.php');
+
 //Checks if user is logged in, otherwise redirect to login.
 if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
 {
@@ -10,7 +12,7 @@ else {
     header("location: login.php?auth");
     exit;
 }
-include("../../navigation.php");
+include("../navigation.php");
 ?>
 <html>
 <head>
@@ -37,22 +39,22 @@ include("../../navigation.php");
 
             <tbody>
                 <?php
-                    include("../../../util/db.php");
-                    $conn = dbConnect("justice_league");
+                require( ROOT_DIR.'/model/user.php' );
 
-                    $sql = "SELECT id, username, email, password FROM `user`";
-                    $result = $conn->query($sql);
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc())
-                        {
+                $users = (new user())->getAllUsers();
+
+                    if (!is_null($users))
+                    {
+                        foreach ($users as $user) {
+
                             echo
                                 '<tr>' .
-                                    '<td>' . $row["id"] . '</td>' .
-                                    '<td>' . $row["username"] . '</td>' .
-                                    '<td>' . $row["email"] . '</td>' .
-                                    '<td>' . $row["password"] . '</td>' .
+                                    '<td>' . $user["id"] . '</td>' .
+                                    '<td>' . $user["username"] . '</td>' .
+                                    '<td>' . $user["email"] . '</td>' .
+                                    '<td>' . $user["password"] . '</td>' .
                                     '<td>' .
-                                        '<input type="hidden" name="to_delete" value="'. $row["id"] .'">' .
+                                        '<input type="hidden" name="to_delete" value="'. $user["id"] .'">' .
                                         '<input type="hidden" name="return_to" value="user">' .
                                         '<button class="deleteButton"><i class="fa fa-trash-o"></i></button>' .
                                     '</td>' .
@@ -62,7 +64,6 @@ include("../../navigation.php");
                     else {
                         echo "0 results";
                     }
-                    $conn->close();
                 ?>
             </tbody>
         </table>

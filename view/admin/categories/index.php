@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include('../../../config.php');
+
 //Checks if user is logged in, otherwise redirect to login.
 if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_SESSION['admin'] == true)
 {
@@ -13,7 +15,7 @@ else
     header("location: ../login.php?auth");
     exit;
 }
-include("../../navigation.php");
+include("../navigation.php");
 ?>
 
 <html>
@@ -40,7 +42,8 @@ include("../../navigation.php");
         <tbody>
         <?php
 
-        include('../../../model/category.php');
+//        include('../../../model/category.php');
+        require( ROOT_DIR.'/model/category.php' );
 
         $categories = (new category())->getCategories();
         if (!is_null($categories))
@@ -51,7 +54,7 @@ include("../../navigation.php");
                     '<tr>' .
                     '<td>' . $category["id"] . '</td>' .
                     '<td>' . $category["category"] . '</td>' .
-                    '<form action="../../../controller/categoryController.php?function=delete" method="post">' .
+                    '<form action="../../../routes.php?function=delete&origin=category" method="post">' .
                     '<td>' .
                     '<input type="hidden" name="to_delete" value="'. $category["id"] .'">' .
                     '<input type="hidden" name="return_to" value="categories">' .

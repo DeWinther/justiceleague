@@ -50,11 +50,11 @@ class questionController
     }
 
     private function create(){
-        include_once('requests/question/CreateQuestionRequest.php');
+        include_once(ROOT_DIR.'/requests/question/CreateQuestionRequest.php');
         (new CreateQuestionRequest())->handle();
 
-        echo "New record created successfully <br>";
-        header("location: view/admin/questions/index.php?success");
+//        echo "New record created successfully <br>";
+        header("location:". JS. "/view/admin/questions/index.php?success");
     }
 
     private function update(){
@@ -63,11 +63,11 @@ class questionController
 
     private function delete(){
 
-        include_once('requests/question/DeleteQuestionRequest.php');
+        include_once(ROOT_DIR.'/requests/question/DeleteQuestionRequest.php');
         (new DeleteQuestionRequest())->handle();
 
         echo "Record deleted successfully <br>";
-        header("location: __DIR__/view/admin/questions/index.php?success");
+        header("location:". JS ."/view/admin/questions/index.php?success");
     }
 
     private function getUsers(){

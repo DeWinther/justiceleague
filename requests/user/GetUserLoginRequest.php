@@ -1,22 +1,21 @@
 <?php
 
-include("/util/db.php");
+include(ROOT_DIR . "/util/db.php");
 
-/**
- * Created by IntelliJ IDEA.
- * User: DeWinther
- * Date: 4/3/2017
- * Time: 9:56 AM
- */
 class GetUserLoginRequest
 {
+    private $conn;
 
     public function handle(){
+
+        $instance = DbConnector::getInstance();
+        $this->conn = $instance->getConnection();
 
         $this->checkInput();
 
         $this->checkLogin();
 
+//        $this->conn->close();
     }
 
     private function checkInput(){
@@ -32,19 +31,22 @@ class GetUserLoginRequest
     }
 
     private function checkLogin(){
-        $conn = dbConnect("justice_league");
+
+//        $conn = dbConnect("justice_league");
+
 
         //not always bulletproof - do preparedstatement
-        $username = mysqli_real_escape_string($conn, $_GET["username"]);
-        $userpassword = mysqli_real_escape_string($conn, $_GET["password"]);
+        $username = mysqli_real_escape_string($this->conn, $_GET["username"]);
+        $userpassword = mysqli_real_escape_string($this->conn, $_GET["password"]);
 
         $sql = "SELECT * FROM `user` WHERE `username` = '$username'";
-        $result = $conn->query($sql);
+        $result = $this->conn->query($sql);
         $row = mysqli_fetch_array($result);
         $user_id = $row['id'];
         $temppass = $row['password'];
         //    $tempusername = $row['username'];
-        $conn->close();
+//        $conn->close();
+
 
         if(password_verify($userpassword, $temppass))
         {

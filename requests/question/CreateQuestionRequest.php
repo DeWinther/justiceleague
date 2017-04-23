@@ -1,6 +1,6 @@
 <?php
 
-include("/util/db.php");
+include(ROOT_DIR."/util/db.php");
 
 class CreateQuestionRequest
 {
@@ -35,12 +35,13 @@ class CreateQuestionRequest
         // should check CSRF token!
         // and prepared statement
 
-        $sql = "INSERT INTO `question` (author_id, category, question) VALUES ('$user_id', '$category', '$question')";
-        if ($conn->query($sql) != TRUE)
+        $stmt = $conn->prepare("INSERT INTO `question` (author_id, category, question) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $user_id, $category, $question);
+
+        if ($stmt->execute() != TRUE)
         {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . "<br>" . $conn->error;
             header("location: ../view/create_question.php?error");
         }
-        $conn->close();
     }
 }

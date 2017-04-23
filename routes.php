@@ -7,6 +7,9 @@
  * Time: 3:32 PM
  */
 
+
+include('config.php');
+
 if(isset($_GET['origin']) && isset($_GET['function'])){
 
     $routes = new routes($_GET['function'], $_GET['origin']);
@@ -59,6 +62,7 @@ class routes
     }
 
     private function login(){
+
         include_once('controller/LoginController.php');
 
         (new LoginController($this->function))->determineFunction();
@@ -66,7 +70,8 @@ class routes
 
     private function question(){
 
-        include_once('controller/questionController.php');
+
+        include_once(ROOT_DIR.'/controller/questionController.php');
 
         $question = new questionController($this->function);
 
@@ -75,6 +80,11 @@ class routes
 
     private function category(){
 
+        include_once(ROOT_DIR.'/controller/categoryController.php');
+
+        $category = new categoryController($this->function);
+
+        $category->determineFunction();
     }
 
     private function users(){
