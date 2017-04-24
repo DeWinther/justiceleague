@@ -88,6 +88,33 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
+.initiallyHidden{
+    display: none !important;
+}
+
+.signUpError{
+    background: darkred !important;
+    border: none !important;
+    color: #ccc !important;
+    height: 90px !important;
+    margin-top: 20px;
+}
+.signUpError i {
+    /*margin: 0 10px 10px 0;*/
+    color: white !important;
+    display: block;
+    font-size: 80px;
+}
+
+.signUpError div {
+    float: right;
+    display: inline-flex;
+}
+
+.signUpError p {
+    margin: 10px;
+}
+
 .deleteButton{
     border: none !important;
     background: none;
@@ -116,3 +143,4 @@ nav > ul > li > a {
 .marginTop{
     margin-top: 50px;
 }
+
