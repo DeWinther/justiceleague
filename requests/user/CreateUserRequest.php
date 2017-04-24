@@ -21,6 +21,8 @@ class CreateUserRequest
 
         $this->checkInput();
 
+        $this->stripForTags();
+
         $this->checkUsername();
 
         $this->checkPassword();
@@ -37,14 +39,23 @@ class CreateUserRequest
         }
     }
 
+    private function stripForTags(){
+
+        $this->username = strip_tags($_POST["username"]);
+
+        $this->email = strip_tags($_POST["email"]);
+
+        $this->password = strip_tags($_POST["password"]);
+    }
+
     private function checkUsername(){
 //        $instance = DbConnector::getInstance();
 //        $this->conn = $instance->getConnection();
 
         //escaping SQL strings.
-        $this->username = mysqli_real_escape_string($this->conn, $_POST["username"]);
-        $this->email = mysqli_real_escape_string($this->conn, $_POST["email"]);
-        $this->password = mysqli_real_escape_string($this->conn, $_POST["password"]);
+        $this->username = mysqli_real_escape_string($this->conn, $this->username);
+        $this->email = mysqli_real_escape_string($this->conn, $this->email);
+        $this->password = mysqli_real_escape_string($this->conn, $this->password);
         //hashing password
 //        $this->password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -87,6 +98,7 @@ class CreateUserRequest
             header("location: view/signup.php?number");
             exit();
         }
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
     }
 
     private function persistUser(){
