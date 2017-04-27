@@ -1,8 +1,8 @@
 <?php
 
-include(ROOT_DIR."/util/db.php");
+include(ROOT_DIR . "/util/db.php");
 
-class DeleteQuestionRequest
+class DeleteUserRequest
 {
 
     private $conn;
@@ -29,17 +29,15 @@ class DeleteQuestionRequest
 
     private function persist(){
 
-//        $conn = dbConnect("justice_league");
-
         $to_delete = $_POST["to_delete"];
 
-        $sql = "DELETE FROM question WHERE `id` = '$to_delete'";
+        $sql = "DELETE FROM user WHERE `id` = '$to_delete'";
 
         if($this->conn->query($sql) === TRUE)
         {
             if(mysqli_affected_rows($this->conn) > 0)
             {
-                header("location: view/admin/questions/index.php");
+                header("location: view/admin/users/all_users.php");
                 exit;
             }
             else
@@ -49,7 +47,7 @@ class DeleteQuestionRequest
         }
         else
         {
-            header("location: ../view/admin/questions/index.php?error");
+            header("location: view/admin/users/all_users.php?error");
             exit;
         }
     }

@@ -27,7 +27,7 @@ include("../navigation.php");
 
 <center><h1>Users</h1></center>
 <div class="container" style="margin-top: 30px">
-    <form action="../../../util/delete_row.php" method="post">
+    <form action="../../../routes.php?function=delete&origin=users" method="post">
         <table class="table table-bordered table-responsive table-hover">
             <thead>
                 <th>Id</th>

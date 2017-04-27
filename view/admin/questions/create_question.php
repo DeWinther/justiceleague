@@ -5,6 +5,9 @@ session_start();
 
 include('../../../config.php');
 
+include_once(ROOT_DIR .'/util/csrf_token.php');
+$token = (new csrf_token())->createToken();
+
 //Checks if user is logged in, otherwise redirect to login.
 if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
 {
@@ -36,6 +39,7 @@ $categories = (new category())->getAllUniqueCategories();
     <h2 class="form-signup-heading">Create Question</h2>
     <div style="margin-top: 30px; margin-bottom: 30px">
         <form action="../../../routes.php?function=create&origin=question" method="post">
+            <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
             <select class="form-control" id="category" name="category" style="border-radius: 0">
                 <option value="0">--Select Category--</option>
                 <?php foreach ($categories as $category){ ?>

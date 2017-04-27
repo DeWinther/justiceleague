@@ -1,11 +1,18 @@
 <?php
 
 include(ROOT_DIR . "/util/db.php");
+include_once(ROOT_DIR . "/util/csrf_token.php");
+
 
 class CreateCategoryRequest
 {
     public function handle()
     {
+        if(!(new csrf_token())->checkToken()){
+            header("location: ../view/create_category.php?token_error");
+            exit;
+        }
+
         $this->checkInputs();
         $this->persist();
     }

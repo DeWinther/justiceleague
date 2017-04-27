@@ -3,6 +3,9 @@
 
 session_start();
 
+include_once(ROOT_DIR .'/util/csrf_token.php');
+$token = (new csrf_token())->createToken();
+
 //Checks if user is logged in, otherwise redirect to login.
 if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true)
 {
@@ -30,6 +33,7 @@ include("../navigation.php");
     <h2 class="form-signup-heading">Create Category</h2>
     <div style="margin-top: 30px; margin-bottom: 30px">
         <form action="../../../routes.php?function=create&origin=category" method="post">
+            <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
             <label for="category" class="sr-only">Category</label>
             <input type="text" name="category" id="category" class="form-control" placeholder="Category" style="border-radius: 0" required>
             <br>
