@@ -4,7 +4,7 @@ session_start();
 include('../../config.php');
 
 //Checks if user is logged in, otherwise redirect to login.
-if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && $_SESSION['admin'] == false)
+if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && !isset($_SESSION['admin']))
 {
     // hmm
 }

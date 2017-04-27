@@ -3,7 +3,7 @@
 
 session_start();
 
-include('../../../config.php');
+include('../../config.php');
 
 include_once(ROOT_DIR .'/util/csrf_token.php');
 $token = (new csrf_token())->createToken();
@@ -17,7 +17,7 @@ else {
     header("location: login.php?auth");
     exit;
 }
-include(ROOT_DIR. "/view/admin/navigation.php");
+include(ROOT_DIR. "/view/user/navigation.php");
 
 include (ROOT_DIR. "/model/category.php");
 
@@ -38,7 +38,7 @@ $categories = (new category())->getAllUniqueCategories();
 <div class="container" style="margin: 0 auto; width: 20%">
     <h2 class="form-signup-heading">Create Question</h2>
     <div style="margin-top: 30px; margin-bottom: 30px">
-        <form action="../../../routes.php?function=create&origin=question" method="post">
+        <form action="../../routes.php?function=create&origin=question" method="post">
             <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
             <select class="form-control" id="category" name="category" style="border-radius: 0">
                 <option value="0">--Select Category--</option>

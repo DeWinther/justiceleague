@@ -54,7 +54,11 @@ class questionController
         (new CreateQuestionRequest())->handle();
 
 //        echo "New record created successfully <br>";
-        header("location:". JS. "/view/admin/questions/index.php?success");
+        if(isset($_SESSION['admin'])){
+            header("location:". JS. "/view/admin/questions/index.php?success");
+        }else{
+            header("location:". JS. "/view/user/index.php?success");
+        }
     }
 
     private function update(){

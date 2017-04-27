@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav">
         <a class="navbar-brand brand" href="#">Justice League</a>
         <li><a href=""">Users</a></li>
-        <li><a href=""">Questions</a></li>
+        <li><a href=<?php __DIR__?>"/justiceleague/view/user/index.php">Questions</a></li>
         <li><a href="">Categories</a></li>
     </ul>
 

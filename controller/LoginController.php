@@ -4,16 +4,6 @@ session_start();
 
 include(ROOT_DIR . '/middleware/CheckUserRole.php');
 
-//if(isset($_GET['function'])){
-//
-//    $controller = new questionController($_GET['function']);
-//
-//    $controller->determineFunction();
-//}else{
-//    echo "Error:" ;
-//    die('ssssss');
-//}
-
 class LoginController
 {
     private $function;
@@ -47,7 +37,6 @@ class LoginController
     }
 
     private function login(){
-
 
         include_once(ROOT_DIR . '/requests/user/GetUserLoginRequest.php');
 
@@ -83,7 +72,7 @@ class LoginController
 
     private function signup(){
 
-        include_once('requests/user/CreateUserRequest.php');
+        include_once(ROOT_DIR .'/requests/user/CreateUserRequest.php');
 
         (new CreateUserRequest())->handle();
 

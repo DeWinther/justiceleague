@@ -1,5 +1,6 @@
 <?php
 include(ROOT_DIR . "/util/db.php");
+//include_once(ROOT_DIR . "/util/csrf_token.php");
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,6 +16,11 @@ class CreateUserRequest
     private $password;
 
     public function handle(){
+
+//        if(!(new csrf_token())->checkToken()){
+//            header("location: view/login.php?token_error");
+//            exit;
+//        }
 
         $instance = DbConnector::getInstance();
         $this->conn = $instance->getConnection();
@@ -35,7 +41,7 @@ class CreateUserRequest
 
         }else{
             //echo "no data supplied <br>";
-            header("location: ../view/signup.php?error");
+            header("location: /view/signup.php?error");
         }
     }
 
@@ -49,8 +55,7 @@ class CreateUserRequest
     }
 
     private function checkUsername(){
-//        $instance = DbConnector::getInstance();
-//        $this->conn = $instance->getConnection();
+
 
         //escaping SQL strings.
         $this->username = mysqli_real_escape_string($this->conn, $this->username);
@@ -79,7 +84,6 @@ class CreateUserRequest
 
     private function checkPassword(){
 
-
         if(strlen($this->password) < 8){
             header("location: view/signup.php?length");
             exit();
@@ -105,9 +109,6 @@ class CreateUserRequest
 
     private function persistUser(){
 
-//        $instance = DbConnector::getInstance();
-//        $this->conn = $instance->getConnection();
-
         $stmt = $this->conn->prepare("INSERT INTO `user` (email, username, password) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $this->email, $this->username, $this->password);
 
@@ -123,7 +124,7 @@ class CreateUserRequest
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $this->username;
             $_SESSION['user_id'] = $user_id;
-            header("location: view/admin/users/all_users.php?success");
+            header("location: view/user/index.php?success");
         }
         else
         {
@@ -132,6 +133,14 @@ class CreateUserRequest
         }
 //        }
 //        $this->conn->close();
+    }
+
+    public function checkToken(){
+        if($_SESSION['csrf_token'] == $_POST['csrf_token']) return true;
+        else{
+            return false;
+        }
+
     }
 
 }

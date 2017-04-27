@@ -1,11 +1,23 @@
 <?php
 
 include(ROOT_DIR . "/util/db.php");
+include_once(ROOT_DIR . "/util/csrf_token.php");
+
 
 class CreateCategoryRequest
 {
+    private $conn;
+
     public function handle()
     {
+        if(!(new csrf_token())->checkToken()){
+            header("location: ../view/create_category.php?token_error");
+            exit;
+        }
+
+        $instance = DbConnector::getInstance();
+        $this->conn = $instance->getConnection();
+
         $this->checkInputs();
         $this->persist();
     }
@@ -24,19 +36,17 @@ class CreateCategoryRequest
 
     private function persist(){
 
-        $conn = dbConnect("justice_league");
-
         //escaping SQL strings.
-        $category = mysqli_real_escape_string($conn, $_POST["category"]);
+        $category = mysqli_real_escape_string($this->conn, $_POST["category"]);
         $user_id = $_SESSION['user_id'];
         // should check CSRF token!
 
-        $stmt = $conn->prepare("INSERT INTO `category` (category) VALUES (?)");
+        $stmt = $this->conn->prepare("INSERT INTO `category` (category) VALUES (?)");
         $stmt->bind_param("s", $category);
 
         if ($stmt->execute() != TRUE)
         {
-            echo "Error: " . "<br>" . $conn->error;
+            echo "Error: " . "<br>" . $this->conn->error;
             header("location: ../view/create_category.php?error");
         }
     }

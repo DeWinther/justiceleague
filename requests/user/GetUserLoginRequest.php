@@ -1,12 +1,18 @@
 <?php
 
 include(ROOT_DIR . "/util/db.php");
+include_once(ROOT_DIR . "/util/csrf_token.php");
 
 class GetUserLoginRequest
 {
     private $conn;
 
     public function handle(){
+//        if(!(new csrf_token())->checkToken()){
+//            header("location: view/login.php?token_error");
+//            exit;
+//        }
+
 
         $instance = DbConnector::getInstance();
         $this->conn = $instance->getConnection();

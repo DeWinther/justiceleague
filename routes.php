@@ -17,7 +17,7 @@ if(isset($_GET['origin']) && isset($_GET['function'])){
     $routes->determineOrigin();
 }else{
     echo "Error:" ;
-    header("location: ../view/create_question.php?error");
+    header("location: ". ROOT_DIR ."/view/create_question.php?error");
 }
 
 class routes
@@ -63,6 +63,7 @@ class routes
 
     private function login(){
 
+
         include_once('controller/LoginController.php');
 
         (new LoginController($this->function))->determineFunction();
@@ -89,6 +90,11 @@ class routes
 
     private function users(){
 
+        include_once(ROOT_DIR.'/controller/UserController.php');
+
+        $users = new UserController($this->function);
+
+        $users->determineFunction();
     }
 
 

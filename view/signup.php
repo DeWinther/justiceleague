@@ -1,3 +1,8 @@
+<?php
+include_once('../util/csrf_token.php');
+$token = (new csrf_token())->createToken();
+?>
+
 <html>
 <head>
     <title>Signup</title>
@@ -16,6 +21,7 @@
 <div class="container" style="margin: 0 auto; width: 20%">
 
     <form class="form-signup" action="../routes.php?function=signup&origin=access" method="post">
+        <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
         <h2 class="form-signup-heading">Sign Up</h2>
         <div style="margin-top: 30px; margin-bottom: 30px">
             <label for="email" class="sr-only">Email</label>
