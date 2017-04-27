@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55c4ec16-0588-49b0-9aa9-2e48897891f5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/LoginController.php" afterPath="$PROJECT_DIR$/controller/LoginController.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,34 +21,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <file leaf-file-name="CreateUserRequest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requests/user/CreateUserRequest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="298">
+              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding>
-                <marker date="1493293648591" expanded="true" signature="59:70199" ph="..." />
-                <marker date="1493293648591" expanded="true" signature="98:328" ph="..." />
-                <marker date="1493293648591" expanded="true" signature="192:328" ph="..." />
-                <marker date="1493293648591" expanded="true" signature="70125:70142" ph="..." />
-                <marker date="1493293648591" expanded="true" signature="70125:70160" ph="..." />
-                <marker date="1493293648591" expanded="true" signature="70125:70173" ph="..." />
-                <marker date="1493293648591" expanded="true" signature="70125:70188" ph="..." />
+                <marker date="1493293711699" expanded="true" signature="1649:1706" ph="SELECT * FRO... user" />
+                <marker date="1493293711699" expanded="true" signature="2846:2909" ph="INSERT INTO `user`... " />
+                <marker date="1493293711699" expanded="true" signature="3183:3240" ph="SELECT * FRO... user" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateUserRequest.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/requests/user/CreateUserRequest.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
-              <folding>
-                <marker date="1493018206688" expanded="true" signature="1411:1468" ph="SELECT * FRO... user" />
-                <marker date="1493018206688" expanded="true" signature="2532:2595" ph="INSERT INTO `user`... " />
-                <marker date="1493018206688" expanded="true" signature="2869:2926" ph="SELECT * FRO... user" />
-              </folding>
+            <state relative-caret-position="544">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,16 +77,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CheckUserRole.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middleware/CheckUserRole.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,6 +97,18 @@
             <state relative-caret-position="17">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="35" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateCategoryRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requests/category/CreateCategoryRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="38" />
+              <folding>
+                <marker date="1492694165007" expanded="true" signature="727:771" ph="INSERT INTO `category`... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,10 +175,10 @@
         <option value="$PROJECT_DIR$/view/admin/users/all_users.php" />
         <option value="$PROJECT_DIR$/model/user.php" />
         <option value="$PROJECT_DIR$/model/category.php" />
-        <option value="$PROJECT_DIR$/requests/user/CreateUserRequest.php" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controller/LoginController.php" />
+        <option value="$PROJECT_DIR$/requests/user/CreateUserRequest.php" />
       </list>
     </option>
   </component>
@@ -467,6 +460,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="justice_league" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="justiceleague" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -908,12 +915,12 @@
       <workItem from="1491990493123" duration="1358000" />
       <workItem from="1492684931396" duration="13314000" />
       <workItem from="1493121258049" duration="580000" />
-      <workItem from="1493281856059" duration="3826000" />
+      <workItem from="1493281856059" duration="4481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30647000" />
+    <option name="totallyTimeSpent" value="31302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1018,13 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1134,16 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requests/category/CreateCategoryRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1492694165007" expanded="true" signature="727:771" ph="INSERT INTO `category`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1198,13 +1188,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1493293648591" expanded="true" signature="59:70199" ph="..." />
-            <marker date="1493293648591" expanded="true" signature="98:328" ph="..." />
-            <marker date="1493293648591" expanded="true" signature="192:328" ph="..." />
-            <marker date="1493293648591" expanded="true" signature="70125:70142" ph="..." />
-            <marker date="1493293648591" expanded="true" signature="70125:70160" ph="..." />
-            <marker date="1493293648591" expanded="true" signature="70125:70173" ph="..." />
-            <marker date="1493293648591" expanded="true" signature="70125:70188" ph="..." />
+            <marker date="1493294120228" expanded="true" signature="59:70282" ph="..." />
+            <marker date="1493294120228" expanded="true" signature="98:192" ph="..." />
+            <marker date="1493294120228" expanded="true" signature="192:328" ph="..." />
+            <marker date="1493294120228" expanded="true" signature="70208:70225" ph="..." />
+            <marker date="1493294120228" expanded="true" signature="70208:70243" ph="..." />
+            <marker date="1493294120228" expanded="true" signature="70208:70256" ph="..." />
+            <marker date="1493294120228" expanded="true" signature="70208:70271" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1279,14 +1269,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requests/category/CreateCategoryRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="38" />
+          <folding>
+            <marker date="1492694165007" expanded="true" signature="727:771" ph="INSERT INTO `category`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/requests/user/CreateUserRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        <state relative-caret-position="298">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
-            <marker date="1493018206688" expanded="true" signature="1411:1468" ph="SELECT * FRO... user" />
-            <marker date="1493018206688" expanded="true" signature="2532:2595" ph="INSERT INTO `user`... " />
-            <marker date="1493018206688" expanded="true" signature="2869:2926" ph="SELECT * FRO... user" />
+            <marker date="1493293711699" expanded="true" signature="1649:1706" ph="SELECT * FRO... user" />
+            <marker date="1493293711699" expanded="true" signature="2846:2909" ph="INSERT INTO `user`... " />
+            <marker date="1493293711699" expanded="true" signature="3183:3240" ph="SELECT * FRO... user" />
           </folding>
         </state>
       </provider>
