@@ -4,9 +4,6 @@ session_start();
 
 include(ROOT_DIR . '/middleware/CheckUserRole.php');
 
-
-
-
 //if(isset($_GET['function'])){
 //
 //    $controller = new questionController($_GET['function']);
@@ -16,7 +13,6 @@ include(ROOT_DIR . '/middleware/CheckUserRole.php');
 //    echo "Error:" ;
 //    die('ssssss');
 //}
-
 
 class LoginController
 {
@@ -71,6 +67,8 @@ class LoginController
 
             header("location: view/admin/questions/index.php?success");
         }else{
+
+            $_SESSION['admin'] = false;
 
             header("location: view/user/index.php?success");
         }
