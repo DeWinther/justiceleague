@@ -10,7 +10,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li><div class="navigationUser">Hi <?php echo ucfirst($_SESSION['username']) ?></div></li>
-        <li><a href="../../../routes.php?function=logout&origin=access">Sign out</a></li>
+        <li><a href="../../routes.php?function=logout&origin=access">Sign out</a></li>
     </ul>
 </nav>
 

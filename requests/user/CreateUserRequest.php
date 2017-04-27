@@ -56,23 +56,24 @@ class CreateUserRequest
         $this->username = mysqli_real_escape_string($this->conn, $this->username);
         $this->email = mysqli_real_escape_string($this->conn, $this->email);
         $this->password = mysqli_real_escape_string($this->conn, $this->password);
-        //hashing password
-//        $this->password = password_hash($password, PASSWORD_DEFAULT);
 
         // use ctpye alpha?
         // add CSRF token.
 
         //Checks if username is taken
-        $sql = "SELECT * FROM `user` WHERE `username` = '$this->username'";
-        $result = $this->conn->query($sql);
+        $stmt = $this->conn->prepare("SELECT `username` FROM `user` WHERE `username` = ?");
+        $stmt->bind_param("s", $this->username);
+        $stmt->execute();
+        $usernameCheck = null;
+        $stmt->bind_result($usernameCheck);
+        $stmt->fetch();
 
-        if(mysqli_fetch_array($result) > 0)
+        if($usernameCheck != null)
         {
             //username taken
             header("location: view/signup.php?taken");
             exit();
         }
-       // $this->conn->close();
 
     }
 
@@ -98,6 +99,7 @@ class CreateUserRequest
             header("location: view/signup.php?number");
             exit();
         }
+        //Hashing password
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
     }
 
@@ -111,12 +113,12 @@ class CreateUserRequest
 
         if ($stmt->execute() === TRUE)
         {
-            //echo "New record created successfully <br>";
-            // gets the new ID from DB and puts in session
-            $sql = "SELECT * FROM `user` WHERE `username` = '$this->username'";
-            $result = $this->conn->query($sql);
-            $row = mysqli_fetch_array($result);
-            $user_id = $row['id'];
+            $stmt = $this->conn->prepare("SELECT id FROM `user` WHERE `username` = ?");
+            $stmt->bind_param("s", $this->username);
+            $stmt->execute();
+            $user_id = null;
+            $stmt->bind_result($user_id);
+            $stmt->fetch();
 
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $this->username;

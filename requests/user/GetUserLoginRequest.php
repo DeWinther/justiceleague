@@ -34,25 +34,24 @@ class GetUserLoginRequest
 
 //        $conn = dbConnect("justice_league");
 
-
         //not always bulletproof - do preparedstatement
         $username = mysqli_real_escape_string($this->conn, $_GET["username"]);
         $userpassword = mysqli_real_escape_string($this->conn, $_GET["password"]);
 
-        $sql = "SELECT * FROM `user` WHERE `username` = '$username'";
-        $result = $this->conn->query($sql);
-        $row = mysqli_fetch_array($result);
-        $user_id = $row['id'];
-        $temppass = $row['password'];
-        //    $tempusername = $row['username'];
-//        $conn->close();
+        //Gets ID & Passwordhash from DB
+        $stmt = $this->conn->prepare("SELECT `id`,`password` FROM `user` WHERE `username` = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $tempPass = null;
+        $tempId = null;
+        $stmt->bind_result($tempId, $tempPass);
+        $stmt->fetch();
 
-
-        if(password_verify($userpassword, $temppass))
+        if(password_verify($userpassword, $tempPass))
         {
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
-            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_id'] = $tempId;
 
             //echo "Logged in successfully <br>";
 //            header("location: view/admin/questions/index.php?success");
