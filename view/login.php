@@ -19,7 +19,7 @@
             <input type="hidden" name="function" value="login">
             <input type="hidden" name="origin" value="access">
         </div>
-        <button class="btn btn-primary btn-block signUpError" type="submit">Sign in</button>
+        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
     </form>
         <button class="btn btn-default btn-block" type="submit" onclick="location.href = 'signup.php'">Sign up</button>
 </div>

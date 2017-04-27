@@ -7,7 +7,7 @@ class DbConnector
 
     private $dbhost = "localhost";
     private $dbuser = "root";
-    private $dbpass = "root";
+    private $dbpass = "";
     private $port = "8889";
 
     # private constructor because it is called from inside THIS CLASS
