@@ -1,6 +1,6 @@
 <?php
 
-include(ROOT_DIR . "/util/db.php");
+include_once(ROOT_DIR . "/util/db.php");
 
 class question
 {
@@ -90,4 +90,19 @@ class question
         return $questions;
     }
 
+    public function getQuestionById($id) {
+        $sql = "SELECT id, author_id, category, question FROM `question` WHERE `id` = '$id' LIMIT 1";
+
+        $results = $this->conn->query($sql);
+
+//        $this->conn->close();
+        $question = [];
+
+        foreach ($results as $result){
+            $question[] = $result;
+
+        }
+
+        return $question;
+    }
 }
