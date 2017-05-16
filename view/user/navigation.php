@@ -13,4 +13,3 @@
         <li><a href="../../routes.php?function=logout&origin=access">Sign out</a></li>
     </ul>
 </nav>
-

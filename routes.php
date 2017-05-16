@@ -51,6 +51,9 @@ class routes
             case 'users':
                 $this->users();
                 break;
+            case 'answer':
+                $this->answer();
+                break;
             default:
                 http_response_code(404);
                 include('view/404.php'); // provide your own HTML for the error page
@@ -95,6 +98,14 @@ class routes
         $users = new UserController($this->function);
 
         $users->determineFunction();
+    }
+
+    private function answer() {
+
+        include_once(ROOT_DIR. '/controller/answerController.php');
+
+        $answer = new answerController($this->function);
+        $answer->determineFunction();
     }
 
 
