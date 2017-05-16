@@ -4,7 +4,6 @@
         <li><a href=<?php __DIR__?>"/justiceleague/view/admin/users/all_users.php">Users</a></li>
         <li><a href=<?php __DIR__?>"/justiceleague/view/admin/questions/index.php">Questions</a></li>
         <li><a href=<?php __DIR__?>"/justiceleague/view/admin/categories/index.php">Categories</a></li>
-        <li><a href=<?php __DIR__?>"/justiceleague/view/admin/answer/index.php">Answer</a></li>
     </ul>
 
 

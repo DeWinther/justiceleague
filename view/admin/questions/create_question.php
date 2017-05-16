@@ -38,7 +38,7 @@ $categories = (new category())->getAllUniqueCategories();
 <div class="container" style="margin: 0 auto; width: 20%">
     <h2 class="form-signup-heading">Create Question</h2>
     <div style="margin-top: 30px; margin-bottom: 30px">
-        <form action="../../../routes.php?function=create&origin=question" method="post">
+        <form action="../../../routes.php?function=create&origin=question" method="post" enctype="multipart/form-data">
             <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
             <select class="form-control" id="category" name="category" style="border-radius: 0">
                 <option value="0">--Select Category--</option>
@@ -49,6 +49,8 @@ $categories = (new category())->getAllUniqueCategories();
             <br>
             <label for="question" class="sr-only">Question</label>
             <input type="text" name="question" id="question" class="form-control" placeholder="Question" style="border-radius: 0" required>
+            <br>
+            <input type="file" name="file" id="file" accept="image/*">
             <br>
             <input class="standardButton" style="width: 100%" type="submit" value="Submit">
         </form>

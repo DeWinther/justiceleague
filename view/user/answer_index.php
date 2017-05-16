@@ -41,6 +41,15 @@ $question = (new question())->getQuestionById($questionId);
 
 <center><h1><?php echo $question[0]['question']; ?></h1></center>
 
+<center>
+    <?php
+    if($question[0]['filename'] != null){
+
+        echo '<img src="'. JS . '/images/questions/'. $question[0]['filename']. '" style="width: 450px;"/>';
+    }
+    ?>
+</center>
+
 <div class="container" style="margin-top: 30px">
     <table class="table table-bordered table-responsive table-hover">
         <thead>

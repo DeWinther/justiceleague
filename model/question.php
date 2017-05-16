@@ -91,7 +91,7 @@ class question
     }
 
     public function getQuestionById($id) {
-        $sql = "SELECT id, author_id, category, question FROM `question` WHERE `id` = '$id' LIMIT 1";
+        $sql = "SELECT id, author_id, category, question, filename FROM `question` WHERE `id` = '$id' LIMIT 1";
 
         $results = $this->conn->query($sql);
 

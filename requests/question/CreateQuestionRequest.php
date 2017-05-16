@@ -36,13 +36,24 @@ class CreateQuestionRequest
 
     private function persist(){
 
+
+        $customName = time() .'_' . basename($_FILES['file']['name']);
+
+        $uploaddir =  ROOT_DIR . '/images/questions/';
+
+        $uploadfile = $uploaddir . $customName;
+
+        move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
+
+
         //escaping SQL strings.
         $category = mysqli_real_escape_string($this->conn, $_POST["category"]);
         $question = mysqli_real_escape_string($this->conn, $_POST["question"]);
         $user_id = $_SESSION['user_id'];
+        $filename = $customName;
 
-        $stmt = $this->conn->prepare("INSERT INTO `question` (author_id, category, question) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $user_id, $category, $question);
+        $stmt = $this->conn->prepare("INSERT INTO `question` (author_id, category, question, filename) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $user_id, $category, $question, $filename);
 
         if ($stmt->execute() != TRUE)
         {

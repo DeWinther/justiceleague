@@ -38,6 +38,7 @@ include(ROOT_DIR ."/view/admin/navigation.php");
             <th>Question</th>
             <th></th>
             <th></th>
+            <th></th>
             </thead>
 
             <tbody>
@@ -57,7 +58,8 @@ include(ROOT_DIR ."/view/admin/navigation.php");
                             '<td>' . $question["category"] . '</td>' .
                             '<td>' . $question["question"] . '</td>' .
                             '<td><i class="fa fa-cogs"></i></td>'.
-                            '<form action="../../../routes.php?function=delete&origin=question" method="post">' .
+                            '<td><a href="../answer/index.php?question=' . $question['id']. '" style="color:black"><i class="fa fa-search"></i></a></td>' .
+                        '<form action="../../../routes.php?function=delete&origin=question" method="post">' .
                                 '<td>' .
                                     '<input type="hidden" name="to_delete" value="'. $question["id"] .'">' .
                                     '<input type="hidden" name="return_to" value="questions">' .
