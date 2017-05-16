@@ -16,6 +16,7 @@ else
     header("location: ". __DIR__."/view/login.php?auth");
     exit;
 }
+
 $questionId = $_GET['question'];
 
 include(ROOT_DIR ."/view/user/navigation.php");
@@ -103,6 +104,18 @@ $question = (new question())->getQuestionById($questionId);
         <input class="standardButton marginTop" type="submit" value="Submit">
     </form>
 
+</div>
+</body>
+</html>
+
+<?php
+if(isset($_SESSION['msg']))
+{
+    echo '<script type="text/javascript">alert("'.$_SESSION['msg'].'");</script>';
+
+    $_SESSION['msg'] = null;
+}
+?>
 
 
 

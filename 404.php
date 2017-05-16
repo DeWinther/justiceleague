@@ -10,21 +10,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title>Poses-404 Website Template | Home :: W3layouts</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="../css/404.css">
+    <link rel="stylesheet" href="css/404.css">
 </head>
 <body>
 <div class="wrap">
-    <h1>Justice league</h1>
-    <div class="banner">
-        <img src="../images/banner.png" alt="" />
-    </div>
+    <center><h1>Justice league</h1></center>
+
+    <br>
+    <center><h3>ERROR - 404</h3></center>
+    <br>
+
     <div class="page">
-        <h2>Dude,we can't find that page!</h2>
-        <h2><a href="<?php header("location:javascript://history.go(-1)"); ?>">Take me back!</a></h2>
+        <center><h2>Dude, we can't find that page!</h2></center>
     </div>
-    <div class="footer">
-        <p>Design by <a href="http://w3layouts.com">w3layouts</a></p>
-    </div>
+
 </div>
 </body>
 </html>
