@@ -4,6 +4,9 @@ session_start();
 include('../../config.php');
 
 include(ROOT_DIR ."/view/user/navigation.php");
+
+if (strpos( $_SERVER['REQUEST_URI'],'hell-no') !== false) echo "<script>alert('Input contained special characters, that was not allowed!');</script>";
+
 ?>
 
 <html>
@@ -59,7 +62,7 @@ include(ROOT_DIR ."/view/user/navigation.php");
 
         if($_SESSION["loggedin"]){
         ?>
-        <input class="standardButton marginTop" type="button" value="Create Question" onclick="location.href = 'create_question.php'">
+        <input class="standardButton marginTop marginBottom" type="button" value="Create Question" onclick="location.href = 'create_question.php'">
         <?php
 
         }
@@ -67,3 +70,12 @@ include(ROOT_DIR ."/view/user/navigation.php");
         ?>
 
 </div>
+
+<?php
+if(isset($_SESSION['msg']))
+{
+    echo '<script type="text/javascript">alert("'.$_SESSION['msg'].'");</script>';
+
+    $_SESSION['msg'] = null;
+}
+?>

@@ -14,17 +14,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
 <div class="wrap">
-    <h1>Justice league</h1>
-    <div class="banner">
-        <img src="images/banner.png" alt="" />
-    </div>
+    <center><h1>Justice league</h1></center>
+
+    <br>
+    <center><h3>ERROR - 404</h3></center>
+    <br>
+
     <div class="page">
-        <h2>Dude,we can't find that page!</h2>
-        <h2><a href="<?php header("location:javascript://history.go(-1)"); ?>">Take me back!</a></h2>
+        <center><h2>Dude, we can't find that page!</h2></center>
     </div>
-    <div class="footer">
-        <p>Design by <a href="http://w3layouts.com">w3layouts</a></p>
-    </div>
+
 </div>
 </body>
 </html>

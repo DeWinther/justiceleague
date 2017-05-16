@@ -1,6 +1,7 @@
 <?php
 
 include(ROOT_DIR . "/util/db.php");
+include_once(ROOT_DIR . '/util/inputCleaner.php');
 include_once(ROOT_DIR . "/util/csrf_token.php");
 
 class CreateAnswerRequest
@@ -22,9 +23,17 @@ class CreateAnswerRequest
     }
 
     private function checkInputs(){
+
         if (isset($_POST["answer"]))
         {
-            //
+            $_POST['answer'] = cleanInput($_POST['answer']);
+            //If special chars was detected
+            if($_POST['answer'] == 'hell-no')
+            {
+                $_SESSION['msg'] = 'Input contained illegal characters';
+                header("location:". JS. "/view/user/answer_index.php?question=". $_POST['questionId']);
+                exit;
+            }
         }
         else
         {
@@ -37,6 +46,7 @@ class CreateAnswerRequest
 
         //escaping SQL strings.
         $answer = mysqli_real_escape_string($this->conn, $_POST["answer"]);
+
         $question_id = $_POST["questionId"];
         $user_id = $_SESSION['user_id'];
         // should check CSRF token!
