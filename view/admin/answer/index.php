@@ -16,17 +16,16 @@ else
     header("location: ". __DIR__."/view/login.php?auth");
     exit;
 }
-$questionId = 1;
+$questionId = $_GET['question'];
 
 include(ROOT_DIR ."/view/admin/navigation.php");
 include_once(ROOT_DIR ."/model/answer.php");
-$answer = (new answer())->getAnswerById($questionId);
-//var_dump($answer);
+$answers = (new answer())->getAnswerById($questionId);
+//var_dump($answers);
 
 include_once(ROOT_DIR ."/model/question.php");
 $question = (new question())->getQuestionById($questionId);
 //var_dump($question);
-
 ?>
 
 <html>
@@ -40,14 +39,16 @@ $question = (new question())->getQuestionById($questionId);
 
 <body>
 
-<center><h1>Answer</h1></center>
+<center><h1><?php echo $question[0]['question']; ?></h1></center>
 
 <div class="container" style="margin-top: 30px">
     <table class="table table-bordered table-responsive table-hover">
         <thead>
         <th>Author</th>
         <th>Answer</th>
-        <th>?</th>
+        <th></th>
+        <th></th>
+        <th></th>
         </thead>
 
         <tbody>
@@ -57,23 +58,23 @@ $question = (new question())->getQuestionById($questionId);
 
 $test = new answer();
 
-if (!is_null($answer))
+if (!is_null($answers))
 {
-    foreach ($answer as $answer)
+    foreach ($answers as $answer)
     {
         echo
             '<tr>' .
-            '<td>' . $test->getAuthor($answer["author_id"])  . '</td>' .
-            '<td>' . $answer["answer"] . '</td> <br>' .
-            '<td>' . '</td> <br>' .
+            '<td>' . $test->getAuthor($answer["user_id"])  . '</td>' .
+            '<td>' . $answer["answer"] . '</td><br>' .
+            '<td>' . '</td><br>' .
             '<td><i class="fa fa-cogs"></i></td>' .
-        //'<form action="../../../routes.php?function=delete&origin=question" method="post">'
+//        '<form action="../../../routes.php?function=delete&origin=question" method="post">' .
         '<td>' .
         '<input type="hidden" name="to_delete" value="'. $answer["id"] .'">' .
         '<input type="hidden" name="return_to" value="answer">' .
         '<button class="deleteButton"><i class="fa fa-trash-o"></i></button>' .
         '</td>' .
-        '</form>'.
+//        '</form>'.
         '</tr>';
     }
 }
@@ -85,7 +86,7 @@ else
         </tbody>
     </table>
     <br>
-
+<h3>Your answer</h3>
 <form action="../../../routes.php?function=answer&origin=answer" method="post">
     <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
     <input type="hidden" name="questionId" value="<?php echo $questionId; ?>">

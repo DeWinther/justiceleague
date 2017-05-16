@@ -1,9 +1,9 @@
+<?php include_once('../../config.php')?>
+
 <nav>
     <ul class="nav navbar-nav">
-        <a class="navbar-brand brand" href="#">Justice League</a>
-        <li><a href=""">Users</a></li>
-        <li><a href=<?php __DIR__?>"/justiceleague/view/user/index.php">Questions</a></li>
-        <li><a href="">Categories</a></li>
+        <a class="navbar-brand brand" href="index.php">Justice League</a>
+        <li><a href="create_question.php">Create Question</a></li>
     </ul>
 
 
@@ -13,4 +13,3 @@
         <li><a href="../../routes.php?function=logout&origin=access">Sign out</a></li>
     </ul>
 </nav>
-

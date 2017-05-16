@@ -12,7 +12,7 @@ class DbConnector
 
     # private constructor because it is called from inside THIS CLASS
     private function __construct() {
-        $this->conn = new mysqli("localhost", "root", "", "justice_league");
+        $this->conn = new mysqli("localhost", "root", "root", "justice_league");
         if ($this->conn->connect_errno) {
             echo "Failed to connect to MySQL: (" . $this->conn->connect_errno . ") " . $this->conn->connect_error;
         }

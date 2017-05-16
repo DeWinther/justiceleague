@@ -44,7 +44,7 @@ class answerController
         if(isset($_SESSION['admin'])){
             header("location:". JS. "/view/admin/answer/index.php?success");
         }else{
-            header("location:". JS. "/view/user/index.php?success");
+            header("location:". JS. "/view/user/answer_index.php?question=". $_POST['questionId'] ."&success");
         }
     }
 }

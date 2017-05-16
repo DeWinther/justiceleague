@@ -50,7 +50,7 @@ class answer
 
     public function getAnswerById ($id)
     {
-        $sql = "SELECT id, answer FROM `answer` WHERE `question_id` = '$id' ";
+        $sql = "SELECT id, answer, user_id FROM `answer` WHERE `question_id` = '$id' ";
 
         $results = $this->conn->query($sql);
 

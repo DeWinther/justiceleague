@@ -3,16 +3,6 @@ session_start();
 
 include('../../config.php');
 
-//Checks if user is logged in, otherwise redirect to login.
-if (isset($_SESSION['username']) && $_SESSION['loggedin'] == true && !isset($_SESSION['admin']))
-{
-    // hmm
-}
-else
-{
-    header("location: ../login.php?auth");
-    exit;
-}
 include(ROOT_DIR ."/view/user/navigation.php");
 ?>
 
@@ -51,7 +41,7 @@ include(ROOT_DIR ."/view/user/navigation.php");
                     '<tr>' .
                     '<td>' . $test->getAuthor($question["author_id"])  . '</td>' .
                     '<td>' . $question["category"] . '</td>' .
-                    '<td>' . $question["question"] . '</td>' .
+                    '<td><a href="answer_index.php?question=' . $question['id']. '">' . $question["question"] . '</a></td>' .
                     '</tr>';
             }
         }
@@ -64,5 +54,16 @@ include(ROOT_DIR ."/view/user/navigation.php");
         ?>
         </tbody>
     </table>
-    <input class="standardButton marginTop" type="button" value="Create Question" onclick="location.href = 'create_question.php'">
+
+    <?php
+
+        if($_SESSION["loggedin"]){
+        ?>
+        <input class="standardButton marginTop" type="button" value="Create Question" onclick="location.href = 'create_question.php'">
+        <?php
+
+        }
+
+        ?>
+
 </div>
