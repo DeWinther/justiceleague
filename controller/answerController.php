@@ -42,7 +42,7 @@ class answerController
 
 //        echo "New record created successfully <br>";
         if(isset($_SESSION['admin'])){
-            header("location:". JS. "/view/admin/answer/index.php?success");
+            header("location:". JS. "/view/admin/answer/index.php?question=". $_POST['questionId'] ."&success");
         }else{
             header("location:". JS. "/view/user/answer_index.php?question=". $_POST['questionId'] ."&success");
         }

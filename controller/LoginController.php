@@ -3,6 +3,8 @@
 session_start();
 
 include(ROOT_DIR . '/middleware/CheckUserRole.php');
+include_once(ROOT_DIR . "/util/csrf_token.php");
+
 
 class LoginController
 {
@@ -64,6 +66,12 @@ class LoginController
     }
 
     private function logout(){
+
+        if(!(new csrf_token())->checkToken()){
+//            die('stop1');
+//            header("location: ../view/create_question.php?token_error");
+            exit;
+        }
 
         session_destroy();
 

@@ -46,9 +46,24 @@ class CreateQuestionRequest
     }
 
     private function persist(){
+        $ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
 
+        if($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png'){
 
-        $customName = time() .'_' . basename($_FILES['file']['name']);
+        }else{
+            $_SESSION['msg'] = 'Image must be in format jpg, jpeg or png';
+            if($_SESSION['admin'] == true){
+                header("location:". JS. "/view/admin/question/create_question.php");
+                exit;
+
+            }else{
+                header("location:". JS. "/view/user/create_question.php");
+                exit;
+            }
+
+        }
+
+        $customName = time() * 60 .'.' . $ext;
 
         $uploaddir =  ROOT_DIR . '/images/questions/';
 

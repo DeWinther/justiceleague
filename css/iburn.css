@@ -148,3 +148,12 @@ nav > ul > li > a {
     margin-bottom: 50px;
 }
 
+.signOutFormButton{
+    background: none;
+    color: #a8a6a7;
+    border: none;
+    display: table;
+    margin: 11px 0 0 0;
+    font-size: 15px;
+}
+

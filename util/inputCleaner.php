@@ -7,7 +7,7 @@ function cleanInput($data)
 
 
     //whitelist
-    echo $data;
+//    echo $data;
 //    exit;
     if (preg_match("/[^aA-zZ0-9?!,. '()@=]+/", $data))
     {
